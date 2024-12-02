@@ -29,7 +29,7 @@ export class AuthenticationService {
 
     const createdUser = await this.UserService.createUser(data);
 
-    return { ...createdUser, password: null };
+    return createdUser;
   }
 
   async login(data: LoginDto) {
@@ -48,7 +48,7 @@ export class AuthenticationService {
     });
 
     console.log({ user });
-    
+
     return {
       token: access_token,
       user,

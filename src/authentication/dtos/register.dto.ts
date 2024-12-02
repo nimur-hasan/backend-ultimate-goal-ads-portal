@@ -27,14 +27,6 @@ export class registerDto {
   email: string;
 
   @ApiProperty({
-    description: 'Phone Number',
-    example: '+123456789',
-  })
-  @IsNotEmpty()
-  @IsString()
-  phone: string;
-
-  @ApiProperty({
     description: 'Password',
     example: '12345678',
   })
