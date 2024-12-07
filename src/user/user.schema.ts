@@ -20,6 +20,12 @@ export class User {
   @Prop({ required: true })
   password: String;
 
+  @Prop({ required: false })
+  mobile: String;
+
+  @Prop({ required: false })
+  address: String;
+
   @Prop({ default: 'User' })
   userType: String;
 

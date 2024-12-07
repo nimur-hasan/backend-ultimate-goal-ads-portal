@@ -28,7 +28,7 @@ export class addUserDto {
   email: string;
 
   @ApiProperty({
-    description: 'Phone number of the user',
+    description: 'Mobile number of the user',
     example: '01784905517',
   })
   @IsNotEmpty()
@@ -38,8 +38,6 @@ export class addUserDto {
   @IsString()
   @IsOptional()
   password: string;
-
-
 
   @ApiProperty({
     description: 'User type should be PHARMACIST/GENERAL_USER',

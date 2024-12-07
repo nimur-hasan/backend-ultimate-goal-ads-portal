@@ -34,10 +34,10 @@ export class updateUserProfileDto {
   email: string;
 
   @ApiProperty({
-    description: 'Phone Number',
+    description: 'Mobile Number',
     example: '+123456789',
   })
   @IsNotEmpty()
   @IsString()
-  phone: string;
+  mobile: string;
 }
