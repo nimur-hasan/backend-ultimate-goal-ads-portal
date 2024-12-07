@@ -11,6 +11,7 @@ import { HqlModule } from './hql/hql.module';
 import { PremiumSalesModule } from './premium_sales/premium_sales.module';
 import { AdsModule } from './ad/ad.module';
 import { CampaignsModule } from './campaign/campaign.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { CampaignsModule } from './campaign/campaign.module';
     DailyModule,
     HqlModule,
     PremiumSalesModule,
+    UploadModule,
   ],
 })
 export class AppModule {}
