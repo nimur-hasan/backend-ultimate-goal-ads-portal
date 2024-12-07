@@ -31,7 +31,7 @@ import { UploadModule } from './upload/upload.module';
     DailyModule,
     HqlModule,
     PremiumSalesModule,
-    UploadModule,
+    // UploadModule,
   ],
 })
 export class AppModule {}
