@@ -4,13 +4,12 @@ import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import { SecuritySchemeType } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
 
-
 async function bootstrap() {
   // const app = await NestFactory.create(AppModule);
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('MSC Backend')
+    .setTitle('Ultimate Goal Ads Portal Backend')
     .setDescription('The backend API description')
     .setVersion('1.0')
     .addBearerAuth({
@@ -38,7 +37,7 @@ async function bootstrap() {
   });
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document, {
-    customSiteTitle: 'MSC Backend',
+    customSiteTitle: 'Ultimate Goal Ads Portal',
     // customfavIcon: 'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
     customJs: [
       'https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js',
