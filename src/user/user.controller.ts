@@ -55,7 +55,7 @@ export class UserController {
     return this.userService.createUser(body);
   }
 
-  @Patch('/update-profile')
+  @Patch('/update-profile/:userId')
   @ApiOperation({
     summary: 'Update an user profile (User)',
   })
