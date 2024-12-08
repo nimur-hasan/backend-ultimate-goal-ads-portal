@@ -19,6 +19,8 @@ export class AdSetsService {
   async findAll(
     page: number,
     limit: number,
+    sortField?: string,
+    sortOrder: 'asc' | 'desc' = 'asc',
   ): Promise<{
     data: AdSet[];
     total: number;
@@ -27,12 +29,21 @@ export class AdSetsService {
     pageCount: number;
   }> {
     const offset = (page - 1) * limit;
-    const data = await this.adSetModel.find().skip(offset).limit(limit).exec();
+    const sortOptions = sortField ? { [sortField]: sortOrder === 'asc' ? 1 : -1 } : {};
+  
+    const data = await this.adSetModel
+      .find()
+      .sort(sortOptions)
+      .skip(offset)
+      .limit(limit)
+      .exec();
+  
     const total = await this.adSetModel.countDocuments().exec();
     const pageCount = Math.ceil(total / limit);
+  
     return { data, total, page, limit, pageCount };
   }
-
+  
   async findOne(id: string): Promise<AdSet> {
     const adSet = await this.adSetModel.findById(id).exec();
     if (!adSet) {

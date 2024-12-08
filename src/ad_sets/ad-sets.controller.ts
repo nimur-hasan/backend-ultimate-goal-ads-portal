@@ -29,9 +29,15 @@ export class AdSetsController {
   }
 
   @Get()
-  findAll(@Query('page') page: number = 1, @Query('limit') limit: number = 10) {
-    return this.adSetsService.findAll(Number(page), Number(limit));
+  findAll(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 10,
+    @Query('sortField') sortField?: string,
+    @Query('sortOrder') sortOrder: 'asc' | 'desc' = 'asc',
+  ) {
+    return this.adSetsService.findAll(Number(page), Number(limit), sortField, sortOrder);
   }
+  
 
   @Get(':id')
   findOne(@Param('id') id: string) {
